@@ -2,7 +2,7 @@
 #
 # install-configure-chrony-ntp.sh
 # Installs and configures chrony on Ubuntu with:
-#   - primary NTP server: 10.4.20.12 (preferred)
+#   - primary NTP server: 10.4.20.12 (preferred) - replace with your local server IP
 #   - backup NTP pool:    ntp.pagasa.dost.gov.ph
 #
 # Usage: sudo ./install-configure-chrony-ntp.sh
