@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# configure-chrony-ntp.sh
+# install-configure-chrony-ntp.sh
 # Installs and configures chrony on Ubuntu with:
 #   - primary NTP server: 10.4.20.12 (preferred)
 #   - backup NTP pool:    ntp.pagasa.dost.gov.ph
 #
-# Usage: sudo ./configure-chrony-ntp.sh
+# Usage: sudo ./install-configure-chrony-ntp.sh
 #
 set -euo pipefail
 
@@ -40,7 +40,7 @@ sed -i -E 's/^(pool|server)\s+/# &/' "$CHRONY_CONF"
 if ! grep -qF "server ${PRIMARY_SERVER} iburst prefer" "$CHRONY_CONF"; then
     {
         echo ""
-        echo "# --- Added by configure-chrony-ntp.sh on ${TIMESTAMP} ---"
+        echo "# --- Added by install-configure-chrony-ntp.sh on ${TIMESTAMP} ---"
         echo "server ${PRIMARY_SERVER} iburst prefer"
         echo "pool ${BACKUP_POOL} iburst"
     } >> "$CHRONY_CONF"
